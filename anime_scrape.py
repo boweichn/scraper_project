@@ -2,6 +2,7 @@ from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 my_url = "http://www.crunchyroll.com/videos/anime/updated"
 
+
 # opening up connection and grabbing the page
 uClient = uReq(my_url)
 page_html = uClient.read()
@@ -30,7 +31,7 @@ def anime_parser():
         thumb_src = thumb_container["src"]
 
         combined_item = [title, recent_episode, thumb_src]
-        anime_list.append(combined_item)
+        anime_list.append(', '.join(combined_item))
     return anime_list
 
 
