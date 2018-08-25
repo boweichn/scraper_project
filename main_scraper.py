@@ -12,17 +12,19 @@ def main ():
     wrapper = """<html>
     <head></head>
         <body>
-            <div>
-                <p>%s</p>
-            </div>
+            <div style="display: table;">
+                <div>
+                    <p>%s</p>
+                </div>
 
+                <div>
+                    <p>%s</p>
+                </div>
             <div>
-                <p>%s</p>
-            </div>
         </body>
     </html>"""
 
-    content = wrapper %('<br>'.join(anime_list), '<br>'.join(manga_list))
+    content = wrapper %(''.join(anime_list), '<br>'.join(manga_list))
 
     # print('\n'.join(anime_list))
     # print('\n')

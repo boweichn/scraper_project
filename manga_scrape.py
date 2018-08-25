@@ -35,8 +35,9 @@ def manga_parser():
         hyperlink_container = container.find("a", {"class", "_2dU-m Mq7mR"})
         recent_chapter_hyperlink = "https://mangarock.com" + hyperlink_container["href"]
 
-        combined_item = [title, recent_chapter, recent_chapter_hyperlink, thumb_src]
-        manga_list.append(', '.join(combined_item))
+        # formatting string to html before writing in main script
+        combined_item = '<div> <p>{}</p><p>{}</p> <p>{}</p> <img src="{}"> </div>'.format(title, recent_chapter, recent_chapter_hyperlink, thumb_src)
+        manga_list.append(combined_item)
     return manga_list
 
 def main():

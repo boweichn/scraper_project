@@ -30,8 +30,9 @@ def anime_parser():
         thumb_container = container.find("img", {"class", "portrait"})
         thumb_src = thumb_container["src"]
 
-        combined_item = [title, recent_episode, thumb_src]
-        anime_list.append(', '.join(combined_item))
+        # formatting string to html before writing in main script
+        combined_item = '<div> <p>{}</p><p>{}</p> <img src="{}"> </div>'.format(title, recent_episode, thumb_src)
+        anime_list.append(combined_item)
     return anime_list
 
 
