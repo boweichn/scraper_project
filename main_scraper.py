@@ -12,12 +12,12 @@ def main ():
     wrapper = """<html>
     <head></head>
         <body>
-            <div style="display: table;">
-                <div>
+            <div style="width: 90vw; text-align: center;">
+                <div style="float: left; width: 45vw; text-align: center;"> 
                     <p>%s</p>
                 </div>
 
-                <div>
+                <div style="float: left; width: 45vw; text-align: center;">
                     <p>%s</p>
                 </div>
             <div>

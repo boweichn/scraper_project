@@ -41,5 +41,6 @@ def anime_parser():
 # print(recent_episode)
 
 if __name__ == "__main__":
-    for items in anime_parser():
-        print(items)
+    # for items in anime_parser():
+    #     print(items)
+    print(containers[0])
