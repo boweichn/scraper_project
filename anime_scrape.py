@@ -30,8 +30,17 @@ def anime_parser():
         thumb_container = container.find("img", {"class", "portrait"})
         thumb_src = thumb_container["src"]
 
+        # finding the hyperlink for the anime
+        anime_hyperlink = "http://www.crunchyroll.com" + container.a["href"]
+
         # formatting string to html before writing in main script
-        combined_item = '<div> <p>{}</p><p>{}</p> <img src="{}"> </div>'.format(title, recent_episode, thumb_src)
+        combined_item = '<div> <h1 style="color: blue; height: 5vh; width: 45vw;">{}</h1>\
+                         <div> <a href="{}" target="_blank" \
+                         style="text-align: center;">{}</a> </div> \
+                         <a href="{}" target="_blank"><img src="{}" style="width: 10vw; height: 27vh; object-fit: cover;"></a> \
+                         </div> <br><br><br>'.format(title, anime_hyperlink, recent_episode, anime_hyperlink, thumb_src)
+
+        # appending the item into the elements list                 
         anime_list.append(combined_item)
     return anime_list
 
@@ -43,4 +52,4 @@ def anime_parser():
 if __name__ == "__main__":
     # for items in anime_parser():
     #     print(items)
-    print(containers[0])
+    print(containers[0].a["href"])

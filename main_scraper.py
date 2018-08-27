@@ -12,6 +12,9 @@ def main ():
     wrapper = """<html>
     <head></head>
         <body>
+            <div style="width: 90vw; height: 15vh; color: red; text-align: center;">
+                <h1>Daily Updates</h1>
+            </div>
             <div style="width: 90vw; text-align: center;">
                 <div style="float: left; width: 45vw; text-align: center;"> 
                     <p>%s</p>
@@ -24,7 +27,7 @@ def main ():
         </body>
     </html>"""
 
-    content = wrapper %(''.join(anime_list), '<br>'.join(manga_list))
+    content = wrapper %(''.join(anime_list), ''.join(manga_list))
 
     # print('\n'.join(anime_list))
     # print('\n')
